@@ -1,0 +1,4 @@
+"use client";
+import { motion, useMotionValue, useSpring } from "motion/react";
+import { useEffect } from "react";
+export default function CursorGlow(){const x=useMotionValue(-300),y=useMotionValue(-300);const sx=useSpring(x,{stiffness:80,damping:25}),sy=useSpring(y,{stiffness:80,damping:25});useEffect(()=>{const f=(e:PointerEvent)=>{x.set(e.clientX);y.set(e.clientY)};window.addEventListener('pointermove',f,{passive:true});return()=>window.removeEventListener('pointermove',f)},[x,y]);return <><motion.div aria-hidden style={{x:sx,y:sy}} className="pointer-events-none fixed left-0 top-0 z-[60] hidden h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--lime)]/[.035] blur-3xl lg:block"/><motion.div aria-hidden style={{x:sx,y:sy}} className="pointer-events-none fixed left-0 top-0 z-[60] hidden h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_20px_5px_rgba(201,255,74,.22)] lg:block"/></>}
