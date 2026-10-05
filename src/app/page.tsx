@@ -90,24 +90,32 @@ const plans = [
     price: "From KSh 15,000",
     desc: "A sharp, credible online presence for a small business or professional.",
     tags: ["1–5 pages", "Responsive", "Contact setup"],
+    whatsappMessage:
+      "Hi Hempon Group! I'm interested in the Starter Website plan, starting from KSh 15,000. I'd like to discuss what I need for my business.",
   },
   {
     name: "Business Website",
     price: "From KSh 30,000",
     desc: "A conversion-focused website with stronger structure, content and integrations.",
     tags: ["Multi-page", "SEO foundation", "Integrations"],
+    whatsappMessage:
+      "Hi Hempon Group! I'm interested in the Business Website plan, starting from KSh 30,000. I'd like to talk about a conversion-focused website for my business.",
   },
   {
     name: "Online Store",
     price: "From KSh 45,000",
     desc: "A practical e-commerce experience built around your catalogue and customers.",
     tags: ["Products", "Checkout", "Orders"],
+    whatsappMessage:
+      "Hi Hempon Group! I'm interested in the Online Store plan, starting from KSh 45,000. I'd like to discuss setting up an online store for my products.",
   },
   {
     name: "Custom Solution",
     price: "Let's scope it",
     desc: "Business software, mobile apps and systems where the product needs to be engineered around you.",
     tags: ["Custom UX", "Database", "Automation"],
+    whatsappMessage:
+      "Hi Hempon Group! I'm interested in the Custom Solution plan. I have a project in mind and would like to discuss the requirements and scope.",
   },
 ];
 
@@ -532,12 +540,12 @@ function Process() {
   return (
     <section
       id="process"
-      className="overflow-hidden border-y border-white/[.07] py-24 sm:py-28 md:py-36"
+      className="overflow-hidden border-y border-white/[.07] py-20 sm:py-28 md:py-36"
     >
       <div className="section-shell">
         <div className="max-w-3xl">
           <SectionLabel>Process</SectionLabel>
-          <h2 className="display mt-6 text-5xl leading-[.94] sm:text-6xl md:text-7xl">
+          <h2 className="display mt-6 text-[clamp(2.25rem,11vw,3rem)] leading-[.94] sm:text-6xl md:text-7xl">
             Less ceremony.
             <br />
             <span className="text-gradient">More momentum.</span>
@@ -547,7 +555,7 @@ function Process() {
             the finished product close to the people using it.
           </p>
         </div>
-        <div className="mt-14 flex min-w-max gap-4 overflow-x-auto pb-4 md:mt-16 md:min-w-0 md:grid md:grid-cols-5 md:overflow-visible md:pb-0">
+        <div className="mt-10 grid grid-cols-1 gap-3 sm:mt-14 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 2xl:mt-16 2xl:grid-cols-5">
           {process.map(([n, t, d], i) => (
             <motion.div
               key={n}
@@ -555,10 +563,10 @@ function Process() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: i * 0.08 }}
-              className="w-[275px] shrink-0 rounded-[26px] border border-white/[.08] bg-white/[.025] p-6 sm:w-[290px] sm:p-7 md:w-auto"
+              className="flex h-full flex-col rounded-[26px] border border-white/[.08] bg-white/[.025] p-5 sm:p-7"
             >
               <span className="mono text-[10px] text-[var(--accent)]">{n}</span>
-              <h3 className="display mt-14 text-2xl">{t}</h3>
+              <h3 className="display mt-8 text-2xl sm:mt-10 2xl:mt-14">{t}</h3>
               <p className="mt-3 text-sm leading-6 text-white/40">{d}</p>
               <div className="mt-8 h-px w-full bg-white/[.08]">
                 <div className="pulse-line h-px w-1/2 origin-left bg-[var(--accent)]" />
@@ -641,11 +649,10 @@ function Pricing() {
           </div>
           <div className="grid gap-3">
             {plans.map((p, i) => (
-              <motion.a
-                href="#contact"
+              <motion.div
                 key={p.name}
                 whileHover={{ x: 4 }}
-                className="group grid gap-6 rounded-[26px] border border-white/[.08] bg-white/[.025] p-6 transition hover:border-white/20 sm:grid-cols-[1fr_auto] sm:items-center sm:p-7"
+                className="grid gap-6 rounded-[26px] border border-white/[.08] bg-white/[.025] p-6 transition hover:border-white/20 sm:grid-cols-[1fr_auto] sm:items-center sm:p-7"
               >
                 <div>
                   <div className="mono text-[9px] uppercase tracking-[.2em] text-[var(--accent)]">
@@ -668,15 +675,38 @@ function Pricing() {
                     ))}
                   </div>
                 </div>
-                <div className="flex items-center justify-between gap-5 sm:block sm:text-right">
+                <div className="flex flex-wrap items-center justify-between gap-4 sm:min-w-44 sm:flex-col sm:items-end sm:text-right">
                   <div className="text-sm font-semibold text-white/72">
                     {p.price}
                   </div>
-                  <span className="mt-2 inline-block text-white/20 transition group-hover:translate-x-1 group-hover:text-white">
-                    ↗
-                  </span>
+                  <a
+                    href={`https://wa.me/254738219953?text=${encodeURIComponent(p.whatsappMessage)}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-[#20bd5a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="size-4"
+                    >
+                      <path
+                        d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.8"
+                      />
+                      <path
+                        d="M8.5 8.5c.2-.4.4-.4.7-.4h.4c.2 0 .3.1.4.4l.6 1.4c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.1 1.4 2 1.8.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.3.6c.2.1.3.2.3.4 0 .3-.2 1-.7 1.3-.5.4-1 .5-1.6.3-.6-.2-1.4-.5-2.4-1.4-1.2-1-2-2.2-2.2-2.8-.3-.7-.1-1.5.1-1.9Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                    Chat on WhatsApp
+                  </a>
                 </div>
-              </motion.a>
+              </motion.div>
             ))}
           </div>
         </div>
