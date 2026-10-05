@@ -292,6 +292,7 @@ function HeroBrand() {
           alt="Farmora product interface"
           fill
           sizes="220px"
+          loading="eager"
           className="object-cover"
         />
       </div>
@@ -301,6 +302,7 @@ function HeroBrand() {
           alt="InvoiceEasy product interface"
           fill
           sizes="180px"
+          loading="eager"
           className="object-cover"
         />
       </div>
@@ -491,7 +493,7 @@ function Work() {
         <div className="mt-14 grid gap-5 md:mt-16 md:grid-cols-2">
           {projects.map((p, i) => (
             <motion.a
-              href="#contact"
+              href="https://portfolio.hempongroup.co.ke/"
               key={p.name}
               initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -760,17 +762,17 @@ function Contact() {
                 href="https://wa.me/254738219953?text=Hello%20Hempon%20Group%2C%20I%27d%20like%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noreferrer"
-                className="contact-link group mt-3 block rounded-[24px] border border-white/10 bg-white/[.035] p-5 transition hover:border-white/25 hover:bg-white/[.055]"
+                className="contact-link group mt-3 block rounded-[24px] border border-[#25D366] bg-[#25D366] p-5 font-bold text-black transition hover:border-[#20bd5a] hover:bg-[#20bd5a]"
               >
-                <div className="mono text-[10px] uppercase tracking-[.2em] text-white/32">
+                <div className="mono text-[10px] uppercase tracking-[.2em] text-black">
                   WhatsApp
                 </div>
-                <div className="mt-3 text-base font-semibold sm:text-lg">
+                <div className="mt-3 text-base font-bold sm:text-lg">
                   +254 738 219 953
                 </div>
-                <div className="mt-6 flex items-center justify-between text-sm text-white/30">
+                <div className="mt-6 flex items-center justify-between text-sm text-black">
                   <span>Message Hempon Group</span>
-                  <span className="text-xl transition group-hover:translate-x-1 group-hover:text-white">
+                  <span className="text-xl transition group-hover:translate-x-1 group-hover:text-black">
                     ↗
                   </span>
                 </div>
