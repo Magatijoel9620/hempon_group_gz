@@ -871,6 +871,38 @@ function BackToTop() {
   );
 }
 
+function MobileWhatsAppButton() {
+  return (
+    <a
+      href="https://wa.me/254738219953?text=Hello%20Hempon%20Group%2C%20I%27d%20like%20to%20discuss%20a%20project."
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Chat with Hempon Group on WhatsApp"
+      className="fixed bottom-4 left-3.5 z-40 inline-flex max-w-[calc(100vw-110px)] items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white shadow-xl transition hover:bg-[#20bd5a] sm:hidden"
+    >
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        className="size-5 shrink-0"
+      >
+        <path
+          d="M20 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.4A8.4 8.4 0 1 1 20 11.5Z"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.8"
+        />
+        <path
+          d="M8.5 8.5c.2-.4.4-.4.7-.4h.4c.2 0 .3.1.4.4l.6 1.4c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.1 1.4 2 1.8.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.3.6c.2.1.3.2.3.4 0 .3-.2 1-.7 1.3-.5.4-1 .5-1.6.3-.6-.2-1.4-.5-2.4-1.4-1.2-1-2-2.2-2.2-2.8-.3-.7-.1-1.5.1-1.9Z"
+          fill="currentColor"
+        />
+      </svg>
+      <span className="truncate">Chat on WhatsApp</span>
+    </a>
+  );
+}
+
 export default function Home() {
   const workRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -906,6 +938,7 @@ export default function Home() {
         <Contact />
       </Reveal>
       <Footer />
+      <MobileWhatsAppButton />
       <BackToTop />
     </div>
   );
