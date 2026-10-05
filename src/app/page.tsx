@@ -176,10 +176,14 @@ function Nav() {
             className="group flex min-w-0 items-center gap-2.5"
             onClick={() => setOpen(false)}
           >
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/[.12] bg-white/[.035] p-2 transition duration-500 group-hover:rotate-6 group-hover:border-white/30">
-              <span className="text-[11px] font-black tracking-[-.04em] text-[var(--accent)]">
-                HG
-              </span>
+            <span className="grid h-9 w-9 shrink-0 place-items-center overflow-hidden rounded-full border border-white/[.12] bg-white/[.035] p-0 transition duration-500 group-hover:rotate-6 group-hover:border-white/30">
+              <Image
+                src="/assets/logo/logo_round.png"
+                alt="HempOn Group logo"
+                width={36}
+                height={36}
+                className="h-full w-full object-cover"
+              />
             </span>
             <span className="hidden truncate text-xs font-bold tracking-[.18em] sm:inline">
               HEMPON GROUP
@@ -258,7 +262,7 @@ function Nav() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-1 rounded-2xl bg-white px-4 py-3 text-sm font-bold text-[#080b10]"
+              className="mt-1 rounded-2xl bg-[var(--accent)] px-4 py-3 text-sm font-bold text-[#080b10]"
             >
               Start a project <span className="float-right">↗</span>
             </a>
